@@ -15,6 +15,8 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var themeControl: UISegmentedControl!
     
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
