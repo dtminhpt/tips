@@ -39,6 +39,24 @@ class SettingsViewController: UIViewController {
         userDefaults.setInteger(index, forKey: "ind")
         userDefaults.synchronize()
     }
+    
+    
+    @IBAction func ChooseTheme(sender: AnyObject) {
+        switch(themeControl.selectedSegmentIndex) {
+        case 0:
+            self.view.backgroundColor = UIColor.redColor()
+        case 1:
+            self.view.backgroundColor = UIColor.whiteColor()
+        case 2:
+            self.view.backgroundColor = UIColor.greenColor()
+        default:
+            self.view.backgroundColor = UIColor.redColor()
+        }
+        
+        //To save a key: theme to NSUserDefaults
+        let index = themeControl.selectedSegmentIndex
+        userDefaults.setInteger(index, forKey: "theme")
+    }
 
     /*
     // MARK: - Navigation

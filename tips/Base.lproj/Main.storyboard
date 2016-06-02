@@ -127,6 +127,9 @@
                                     <segment title="White"/>
                                     <segment title="Green"/>
                                 </segments>
+                                <connections>
+                                    <action selector="ChooseTheme:" destination="iNP-OQ-axl" eventType="valueChanged" id="xWU-Gp-ZTV"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default theme: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DhE-PW-sOY">
                                 <rect key="frame" x="20" y="196" width="168" height="21"/>
