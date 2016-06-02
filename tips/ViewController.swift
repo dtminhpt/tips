@@ -104,6 +104,16 @@ class ViewController: UIViewController {
         
         tipLabel.text = String(format: "$%.2f",tip)
         totalLabel.text = String(format: "$%.2f", total)
+        
+        fadeInTotal()
+    }
+    
+    func fadeInTotal() {
+        self.totalLabel.alpha = 0
+        UIView.animateWithDuration(0.4, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn,
+            animations: {
+                self.totalLabel.alpha = 1
+            }, completion: nil )
     }
     
     @IBAction func onTap(sender: AnyObject) {
