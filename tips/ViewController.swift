@@ -12,6 +12,7 @@ import UIKit
 class ViewController: UIViewController {
 
     
+    @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var billField: UITextField!
     
     @IBOutlet weak var tipLabel: UILabel!
