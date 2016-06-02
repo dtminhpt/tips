@@ -28,6 +28,44 @@ class ViewController: UIViewController {
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("view will appear")
+        
+        /* When returning to the main ViewController from the settings screen,
+           it would be good to have the tip percentage reflect the new default value. 
+           One way to do that is load the tip percentage from NSUserDefaults whenever the view appears.
+        */
+        //Load tipPercentage from userDefaults whenever the view appears.
+        let tipPercentage = userDefaults.doubleForKey("tip")
+        let tipIndex = userDefaults.integerForKey("ind")
+        tipControl.selectedSegmentIndex = tipIndex
+        
+        let billAmount = NSString(string: billField.text!).doubleValue
+        let tip = billAmount * tipPercentage
+        let total = billAmount + tip
+        
+        tipLabel.text = String(format: "$%.2f",tip)
+        totalLabel.text = String(format: "$%.2f", total)
+
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        print("view did appear")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("view will disappear")
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("view did disappear")
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -36,12 +74,12 @@ class ViewController: UIViewController {
 
     @IBAction func onEditingChanged(sender: AnyObject) {
         var tipPercentages = [0.18, 0.2, 0.22]
-        var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
+        let tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
-        var billAmount = NSString(string: billField.text!).doubleValue
+        let billAmount = NSString(string: billField.text!).doubleValue
         
-        var tip = billAmount * tipPercentage
-        var total = billAmount + tip
+        let tip = billAmount * tipPercentage
+        let total = billAmount + tip
         
         tipLabel.text = String(format: "$%.2f",tip)
         totalLabel.text = String(format: "$%.2f", total)
