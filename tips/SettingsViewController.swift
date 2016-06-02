@@ -28,6 +28,28 @@ class SettingsViewController: UIViewController {
         //Load theme which is saved in userDefaults
         let themeIndex = userDefaults.integerForKey("themeInd")
         themeControl.selectedSegmentIndex = themeIndex
+        
+        //Set background color of Settings page follow themeIndex
+        
+        switch(themeIndex) {
+            
+        case 0:
+            
+            self.view.backgroundColor = UIColor.redColor()
+            
+        case 1:
+            
+            self.view.backgroundColor = UIColor.whiteColor()
+            
+        case 2:
+            
+            self.view.backgroundColor = UIColor.greenColor()
+            
+        default:
+            
+            self.view.backgroundColor = UIColor.redColor()
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
