@@ -27,11 +27,16 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         print("view will appear")
+        
+        //set focus to billField
+        billField.becomeFirstResponder()
+
         
         /* When returning to the main ViewController from the settings screen,
            it would be good to have the tip percentage reflect the new default value. 
