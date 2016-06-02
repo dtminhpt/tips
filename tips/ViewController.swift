@@ -33,7 +33,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
+        
         self.view.backgroundColor = UIColor.greenColor()
+        
+        if let lastBillAmount = SettingsHelper.getLastBillAmount() {
+            billField.text = lastBillAmount
+        }
         
     }
     
@@ -97,22 +102,31 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onEditingChanged(sender: AnyObject) {
-        var tipPercentages = [0.18, 0.2, 0.22]
+        
+        let billAmountString = billField.text! as NSString
+        SettingsHelper.setLastBillAmount(billAmountString as String)
+       
+        
+        let tipPercentages = [0.18, 0.2, 0.22]
         let tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
         
-        let billAmount = NSString(string: billField.text!).doubleValue
-        
+        let billAmount = billAmountString.doubleValue
         let tip = billAmount * tipPercentage
+        
         let total = billAmount + tip
         
-        tipPercentLabel.text = "Tip (\(Int(tipPercentage*100))%)"
-        tipLabel.text = String(format: "$%.2f",tip)
-        totalLabel.text = String(format: "$%.2f", total)
         
-        twoPersonLabel.text = String(format: "$%.2f", total / 2)
-        threePeopleLabel.text = String(format: "$%.2f", total / 3)
-        fourPeopleLabel.text = String(format: "$%.2f", total / 4)
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = .CurrencyStyle
+        formatter.locale = NSLocale.currentLocale()
+        
+        tipPercentLabel.text = "Tip (\(Int(tipPercentage*100))%)"
+        tipLabel.text = formatter.stringFromNumber(tip)
+        totalLabel.text = formatter.stringFromNumber(total)
+        twoPersonLabel.text = formatter.stringFromNumber(total/2)
+        threePeopleLabel.text = formatter.stringFromNumber(total/3)
+        fourPeopleLabel.text = formatter.stringFromNumber(total/4)
         
         fadeInTotal()
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA2155521D00765B0042A999 /* SettingsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2155511D00765B0042A999 /* SettingsHelper.swift */; };
 		BA6B4CF51CFFD4560085D196 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6B4CF41CFFD4560085D196 /* AppDelegate.swift */; };
 		BA6B4CF71CFFD4560085D196 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6B4CF61CFFD4560085D196 /* ViewController.swift */; };
 		BA6B4CFA1CFFD4560085D196 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6B4CF81CFFD4560085D196 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA2155511D00765B0042A999 /* SettingsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsHelper.swift; sourceTree = "<group>"; };
 		BA6B4CF11CFFD4560085D196 /* tips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6B4CF41CFFD4560085D196 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA6B4CF61CFFD4560085D196 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				BA6B4CFB1CFFD4560085D196 /* Assets.xcassets */,
 				BA6B4CFD1CFFD4560085D196 /* LaunchScreen.storyboard */,
 				BA6B4D001CFFD4560085D196 /* Info.plist */,
+				BA2155511D00765B0042A999 /* SettingsHelper.swift */,
 			);
 			path = tips;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA2155521D00765B0042A999 /* SettingsHelper.swift in Sources */,
 				BA6B4CF71CFFD4560085D196 /* ViewController.swift in Sources */,
 				BA6B4CF51CFFD4560085D196 /* AppDelegate.swift in Sources */,
 				BA6B4D071D0007430085D196 /* SettingsViewController.swift in Sources */,
@@ -291,6 +295,7 @@
 				BA6B4D051CFFD4560085D196 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
