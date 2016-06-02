@@ -48,6 +48,25 @@ class ViewController: UIViewController {
         
         tipLabel.text = String(format: "$%.2f",tip)
         totalLabel.text = String(format: "$%.2f", total)
+        
+        //Load theme from userDefaults whenever the view appears.
+        let themeIndex = userDefaults.integerForKey("themeInd")
+        
+        //Set background color of Settings page follow themeIndex
+        switch(themeIndex) {
+            case 0:
+                self.view.backgroundColor = UIColor.redColor()
+            
+            case 1:
+                self.view.backgroundColor = UIColor.whiteColor()
+            
+            case 2:
+                self.view.backgroundColor = UIColor.greenColor()
+            
+            default:
+                self.view.backgroundColor = UIColor.redColor()
+            
+        }
 
         
     }
