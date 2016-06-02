@@ -28,6 +28,17 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func choosePercentage(sender: AnyObject) {
+        let tipPercentages = [0.18, 0.2, 0.22]
+        
+        let tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
+        let index = tipControl.selectedSegmentIndex
+        
+        //To save a key:tipPercentage to NSUserDefaults
+        userDefaults.setObject(tipPercentage, forKey: "tip")
+        userDefaults.setInteger(index, forKey: "ind")
+        userDefaults.synchronize()
+    }
 
     /*
     // MARK: - Navigation
