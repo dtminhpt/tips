@@ -85,6 +85,7 @@ class SettingsViewController: UIViewController {
         //To save a key: theme to NSUserDefaults
         let index = themeControl.selectedSegmentIndex
         userDefaults.setInteger(index, forKey: "themeInd")
+        userDefaults.synchronize()
     }
 
     /*
