@@ -14,9 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var billField: UITextField!
-    
     @IBOutlet weak var tipLabel: UILabel!
-    
     @IBOutlet weak var totalLabel: UILabel!
     
     let userDefaults = NSUserDefaults.standardUserDefaults()
@@ -72,8 +70,6 @@ class ViewController: UIViewController {
                 self.view.backgroundColor = UIColor.redColor()
             
         }
-
-        
     }
     
     override func viewDidAppear(animated: Bool) {

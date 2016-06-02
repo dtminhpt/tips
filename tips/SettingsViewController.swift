@@ -9,8 +9,6 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
-    
     @IBOutlet weak var tipControl: UISegmentedControl!
     
     @IBOutlet weak var themeControl: UISegmentedControl!
@@ -32,22 +30,16 @@ class SettingsViewController: UIViewController {
         //Set background color of Settings page follow themeIndex
         
         switch(themeIndex) {
+            case 0:
+                self.view.backgroundColor = UIColor.redColor()
             
-        case 0:
+            case 1:
+                self.view.backgroundColor = UIColor.whiteColor()
             
-            self.view.backgroundColor = UIColor.redColor()
-            
-        case 1:
-            
-            self.view.backgroundColor = UIColor.whiteColor()
-            
-        case 2:
-            
-            self.view.backgroundColor = UIColor.greenColor()
-            
-        default:
-            
-            self.view.backgroundColor = UIColor.redColor()
+            case 2:
+                self.view.backgroundColor = UIColor.greenColor()
+            default:
+                self.view.backgroundColor = UIColor.redColor()
             
         }
     }
