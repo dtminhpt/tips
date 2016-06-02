@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tip Calculator-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tips" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,7 +81,13 @@
                             <outletCollection property="gestureRecognizers" destination="AAe-By-h7b" appends="YES" id="hlf-EE-1ac"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="73d-tb-8UC"/>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="73d-tb-8UC">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="CMC-H0-15t">
+                            <connections>
+                                <segue destination="iNP-OQ-axl" kind="push" id="t0e-ow-4Tl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billField" destination="xJY-wy-yeI" id="Crt-vP-9dA"/>
                         <outlet property="tipControl" destination="uYE-PA-YD9" id="tYT-5K-gvR"/>
@@ -107,10 +113,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ThY-HO-wLh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E7u-pV-0Zg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046" y="310"/>
+            <point key="canvasLocation" x="1108" y="310"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xlh-Mv-zVP">
