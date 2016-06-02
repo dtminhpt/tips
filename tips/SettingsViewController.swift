@@ -21,6 +21,13 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //Load pecentage which is saved in userDefaults
+        let tipIndex = userDefaults.integerForKey("ind")
+        tipControl.selectedSegmentIndex = tipIndex
+        
+        //Load theme which is saved in userDefaults
+        let themeIndex = userDefaults.integerForKey("themeInd")
+        themeControl.selectedSegmentIndex = themeIndex
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,7 +62,7 @@ class SettingsViewController: UIViewController {
         
         //To save a key: theme to NSUserDefaults
         let index = themeControl.selectedSegmentIndex
-        userDefaults.setInteger(index, forKey: "theme")
+        userDefaults.setInteger(index, forKey: "themeInd")
     }
 
     /*
