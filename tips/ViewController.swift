@@ -32,7 +32,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onEditingChanged(sender: AnyObject) {
-        print("User editing bill")
+        var billAmount = NSString(string: billField.text!).doubleValue
+        
+        var tip = billAmount * 0.2
+        var total = billAmount + tip
+        
+        tipLabel.text = String(format: "$%f",tip)
+        totalLabel.text = String(format: "$%f", total)
     }
 
 }
