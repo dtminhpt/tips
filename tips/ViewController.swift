@@ -51,16 +51,7 @@ class ViewController: UIViewController {
         let tipIndex = userDefaults.integerForKey("ind")
         tipControl.selectedSegmentIndex = tipIndex
         
-        let billAmount = NSString(string: billField.text!).doubleValue
-        let tip = billAmount * tipPercentage
-        let total = billAmount + tip
-        
-        tipLabel.text = String(format: "$%.2f",tip)
-        totalLabel.text = String(format: "$%.2f", total)
-        
-        twoPersonLabel.text = String(format: "$%.2f", total / 2)
-        threePeopleLabel.text = String(format: "$%.2f", total / 3)
-        fourPeopleLabel.text = String(format: "$%.2f", total / 4)
+        self.onEditingChanged(self)
         
         //Load theme from userDefaults whenever the view appears.
         let themeIndex = userDefaults.integerForKey("themeInd")
