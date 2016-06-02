@@ -25,6 +25,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var fourPeopleLabel: UILabel!
     
     
+    @IBOutlet weak var tipPercentLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -47,7 +50,7 @@ class ViewController: UIViewController {
            One way to do that is load the tip percentage from NSUserDefaults whenever the view appears.
         */
         //Load tipPercentage from userDefaults whenever the view appears.
-        let tipPercentage = userDefaults.doubleForKey("tip")
+        //let tipPercentage = userDefaults.doubleForKey("tip")
         let tipIndex = userDefaults.integerForKey("ind")
         tipControl.selectedSegmentIndex = tipIndex
         
@@ -97,11 +100,13 @@ class ViewController: UIViewController {
         var tipPercentages = [0.18, 0.2, 0.22]
         let tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
+        
         let billAmount = NSString(string: billField.text!).doubleValue
         
         let tip = billAmount * tipPercentage
         let total = billAmount + tip
         
+        tipPercentLabel.text = "Tip (\(Int(tipPercentage*100))%)"
         tipLabel.text = String(format: "$%.2f",tip)
         totalLabel.text = String(format: "$%.2f", total)
         
