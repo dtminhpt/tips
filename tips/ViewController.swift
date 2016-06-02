@@ -20,6 +20,11 @@ class ViewController: UIViewController {
     let userDefaults = NSUserDefaults.standardUserDefaults()
     
     
+    @IBOutlet weak var twoPersonLabel: UILabel!
+    @IBOutlet weak var threePeopleLabel: UILabel!
+    @IBOutlet weak var fourPeopleLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -52,6 +57,10 @@ class ViewController: UIViewController {
         
         tipLabel.text = String(format: "$%.2f",tip)
         totalLabel.text = String(format: "$%.2f", total)
+        
+        twoPersonLabel.text = String(format: "$%.2f", total / 2)
+        threePeopleLabel.text = String(format: "$%.2f", total / 3)
+        fourPeopleLabel.text = String(format: "$%.2f", total / 4)
         
         //Load theme from userDefaults whenever the view appears.
         let themeIndex = userDefaults.integerForKey("themeInd")
@@ -104,6 +113,10 @@ class ViewController: UIViewController {
         
         tipLabel.text = String(format: "$%.2f",tip)
         totalLabel.text = String(format: "$%.2f", total)
+        
+        twoPersonLabel.text = String(format: "$%.2f", total / 2)
+        threePeopleLabel.text = String(format: "$%.2f", total / 3)
+        fourPeopleLabel.text = String(format: "$%.2f", total / 4)
         
         fadeInTotal()
     }
