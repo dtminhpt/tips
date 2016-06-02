@@ -148,6 +148,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ThY-HO-wLh"/>
+                    <connections>
+                        <outlet property="themeControl" destination="lWT-Fc-kNv" id="iOX-nc-RA3"/>
+                        <outlet property="tipControl" destination="cma-YB-H7S" id="xet-EM-PgX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E7u-pV-0Zg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
