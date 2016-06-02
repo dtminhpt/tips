@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var totalLabel: UILabel!
     
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
